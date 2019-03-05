@@ -1,0 +1,48 @@
+
+// Header
+//----------
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  padding: 8px 12px 12px;
+  background-color: $white;
+  box-shadow: 0 0 8px $grey;
+
+  .logo-link {
+    display: block;
+    margin: 0 auto 4px;
+    text-align: center;
+  }
+  .header-logo {
+    display: inline-block;
+    height: 62px;
+    width: auto;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+
+    .nav-link {
+      flex: 0 0 auto;
+      display: inline-block;
+      padding: 6px  4px;
+      margin-right: 18px;
+      transition: color 0.2s;
+
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        color: $grey-light;
+      }
+
+      &.active {
+        border-bottom: 1px solid $grey-light;
+      }
+    }
+  }
+}

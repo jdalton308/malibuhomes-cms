@@ -1,0 +1,16 @@
+
+<header class="header">
+  <a href="/" class="logo-link">
+    <img src="/assets/images/mh-logo.jpg" alt="Malibu Homes logo" class="header-logo">
+  </a>
+  <nav class="wrapper">
+    {% for item in site.data.header %}
+      <a
+        href="{{ item.to }}"
+        class="nav-link {% if page.url == item.to %}active{% endif %}"
+      >
+        {{ item.name }}
+      </a>
+    {% endfor %}
+  </nav>
+</header>

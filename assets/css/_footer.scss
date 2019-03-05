@@ -1,0 +1,32 @@
+
+// Footer
+//----------
+
+.footer {
+  display: block;
+  background-color: $grey-darkest;
+  color: $white;
+
+  .footer-main-content {
+    padding: 64px 24px;
+  }
+
+  .footer-column {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 250px;
+    margin-right: 24px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .footer-copyright {
+    padding: 8px 24px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: $grey-light;
+    background-color: $grey-darker;
+  }
+}

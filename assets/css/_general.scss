@@ -1,0 +1,162 @@
+
+// General Styles
+//----------
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $grey-darkest;
+}
+
+body {
+  font-family: $sans-family;
+  font-size: $font-size-base;
+  color: $grey-dark;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $wrapper-full;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px; // space for fixed header
+  min-height: calc(100vh - 305px);
+
+  section {
+    flex: 1 0 auto;
+  }
+}
+
+.flex-row {
+  display: flex;
+
+  .flex-item {
+    flex: 1 0 0;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+section {
+  padding: 52px 0;
+  text-align: center;
+
+  &.section-brown {
+    background-color: $brown-light;
+  }
+  &.section-grey {
+    background-color: $grey;
+    color: $white;
+  }
+  &.section-dark {
+    background-color: $grey-darker;
+    color: $white;
+  }
+}
+
+
+// Buttons
+//-----
+
+button {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  transition:
+    background-color 0.4s,
+    color 0.3s;
+
+  &.btn-outline {
+    color: $blue-light;
+    text-transform: uppercase;
+    border: 2px solid $blue-light;
+
+    &:hover {
+      color: $white;
+      background-color: $blue-light;
+    }
+    &:active {
+      color: $blue-light;
+      transition: none;
+    }
+
+    &.btn-light {
+      color: $white;
+      border-color: $white;
+
+      &:hover {
+        color: $blue-light;
+        background-color: $white;
+      }
+      &:active {
+        color: $white;
+      }
+    }
+  }
+}
+
+
+// Typography
+//-----
+
+h1,
+h2,
+h3 {
+  margin: 0 0 12px;
+  font-family: $script-family;
+}
+h1,
+h2 {
+  font-size: 56px;
+  margin-bottom: 24px;
+}
+
+h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: $sans-family;
+}
+
+p {
+  margin: 0 0 12px;
+  line-height: 1.7em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $grey-dark;
+  text-decoration: none;
+}
+
+blockquote {
+  margin: 24px 0;
+  padding: 4px 0 4px 16px;
+  border-left: 2px solid $blue-light;
+  font-style: italic;
+}

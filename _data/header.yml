@@ -1,0 +1,10 @@
+- name: About
+  to: /about/
+- name: Process
+  to: /process.html
+- name: Portfolio
+  to: /portfolio.html
+- name: Contact Us
+  to: /contact.html
+- name: Blog
+  to: /blog.html

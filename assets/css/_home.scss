@@ -1,0 +1,51 @@
+
+// Home
+//--------
+
+.main-home {
+  text-align: center;
+
+  // General
+
+  .subtitle {
+    margin-bottom: 24px;
+  }
+  .img-section-full {
+    display: block;
+    width: 100%;
+  }
+
+  // Sections
+
+  .section-hero {
+    padding: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .section-cta {
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+  .section-community {
+    .check-item {
+      display: flex;
+      margin-bottom: 18px;
+      
+      .check-mark {
+        flex: 0 0 auto;
+        margin-right: 12px;
+      }
+      .item-content {
+        flex: 1 0 0;
+        text-align: left;
+      }
+    }
+  }
+
+
+}
