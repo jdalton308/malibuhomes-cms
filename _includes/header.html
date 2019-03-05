@@ -4,6 +4,7 @@
     <img src="/assets/images/mh-logo.jpg" alt="Malibu Homes logo" class="header-logo">
   </a>
   <nav class="wrapper">
+
     {% for item in site.data.header %}
       <a
         href="{{ item.to }}"
@@ -12,5 +13,6 @@
         {{ item.name }}
       </a>
     {% endfor %}
+
   </nav>
 </header>

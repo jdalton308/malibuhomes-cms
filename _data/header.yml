@@ -1,10 +1,10 @@
 - name: About
   to: /about/
 - name: Process
-  to: /process.html
+  to: /process/
 - name: Portfolio
-  to: /portfolio.html
+  to: /portfolio/
 - name: Contact Us
-  to: /contact.html
+  to: /contact/
 - name: Blog
-  to: /blog.html
+  to: /blog/
