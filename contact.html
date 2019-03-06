@@ -39,6 +39,18 @@ permalink: /contact/
             <button class="btn btn-outline btn-light">Submit</button>
           </div>
 
+          <div class="status-overlay">
+            <div class="status status-submitting">
+              Submitting...
+            </div>
+            <div class="status status-success">
+              Thank you for your message. We will get back to you as soon as possible.
+            </div>
+            <div class="status status-error">
+              Could not submit message. Please try again.
+            </div>
+          </div>
+
         </form>
 
 
@@ -73,18 +85,27 @@ permalink: /contact/
 
   <script>
     const formEl = document.querySelector('#contact-form');
+    const statusOverlayEl = document.querySelector('.status-overlay');
     const postUrl = 'https://app.99inbound.com/api/e/xpF-V77V';
+
+
 
     formEl.addEventListener('submit', (e) => {
       e.preventDefault();
+      statusOverlayEl.classList.add('submitting', 'show');
 
       fetch(postUrl, {
         method: 'POST',
         body: new FormData(formEl),
       })
-        // .then(res => res.json())
-        .then(response => console.log('Success:', response))
-        .catch(error => console.error('Error:', error));
+        .then((response) => {
+          console.log('Success:', response);
+          statusOverlayEl.classList.replace('submitting', 'success');
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          statusOverlayEl.classList.replace('submitting', 'error');
+        });
 
     });
   </script>
