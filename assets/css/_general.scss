@@ -84,6 +84,7 @@ button {
 .btn {
   display: inline-block;
   padding: 8px 20px;
+  cursor: pointer;
   transition:
     background-color 0.4s,
     color 0.3s;
@@ -134,9 +135,9 @@ h2 {
 }
 
 h4 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  font-weight: 400;
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
   font-family: $sans-family;
 }
 
@@ -150,8 +151,16 @@ p {
 }
 
 a {
-  color: $grey-dark;
+  color: currentColor;
   text-decoration: none;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 1px solid currentColor;
+  transition: border 0.3s;
+
+  &:hover {
+    border-bottom-color: $blue-light;
+  }
 }
 
 blockquote {
@@ -159,4 +168,52 @@ blockquote {
   padding: 4px 0 4px 16px;
   border-left: 2px solid $blue-light;
   font-style: italic;
+}
+
+
+// Forms
+//-----
+
+.form-row {
+  display: flex;
+  margin-bottom: 16px;
+
+  .form-group {
+    flex: 1 0 0;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.button-row {
+    display: block;
+    margin: 0;
+    text-align: right;
+  }
+}
+
+.form-group {
+  display: inline-block;
+
+  .label {
+    display: block;
+    margin-bottom: 4px;
+  }
+  input,
+  textarea {
+    width: 100%;
+  }
+}
+
+input,
+textarea {
+  display: block;
+  border: 0;
+  border-radius: 0;
+  padding: 12px 16px;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
 }

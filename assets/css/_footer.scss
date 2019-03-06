@@ -10,11 +10,15 @@
   .footer-main-content {
     padding: 64px 24px;
   }
+  .wrapper {
+    display: flex;
+  }
 
   .footer-column {
+    flex: 1 0 0;
+    max-width: 25%;
     display: inline-block;
     vertical-align: top;
-    max-width: 250px;
     margin-right: 24px;
 
     &:last-child {

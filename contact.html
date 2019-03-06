@@ -10,25 +10,83 @@ permalink: /contact/
     <div class="wrapper">
       <h1>Contact Us</h1>
 
-      <div class="contact-item">
-        <h4>Email</h4>
-        <p>team@malibuhomescolorado.com</p>
-      </div>
-      
-      <div class="contact-item">
-        <h4>Phone</h4>
-        <p>303.790.0909</p>
-      </div>
+      <div class="contact-row">
 
-      <div class="contact-item">
-        <h4>Address</h4>
-        <p>
-          12835 E. Arapahoe Road<br/>
-          Tower 1, Suite 320<br/>
-          Centennial, CO 80112
-        </p>
+        <form id="contact-form">
+
+          <div class="form-row">
+            <label class="form-group">
+              <span class="label">Email</span>
+              <input type="email" name="email">
+            </label>
+            <label class="form-group">
+              <span class="label">Name</span>
+              <input type="text" name="name">
+            </label>
+          </div>
+
+          <div class="form-row">
+            <div style="position: absolute; left: -5000px;">
+              <input type="checkbox" name="awesome_golden_matte_bullfrog" value="1" tabindex="-1" autocomplete="no">
+            </div>
+            <label class="form-group">
+              <span class="label">Message</span>
+              <textarea name="message" cols="30" rows="10"></textarea>
+            </label>
+          </div>
+
+          <div class="form-row button-row">
+            <button class="btn btn-outline btn-light">Submit</button>
+          </div>
+
+        </form>
+
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <h4>Email</h4>
+            <p><a href="mailto:team@malibuhomescolorado.com" target="_blank">team@malibuhomescolorado.com</a></p>
+          </div>
+          
+          <div class="contact-item">
+            <h4>Phone</h4>
+            <p><a href="tel:3037900909">303.790.0909</a></p>
+          </div>
+
+          <div class="contact-item">
+            <h4>Address</h4>
+            <p>
+              <a href="https://goo.gl/maps/XaEnWbPHhJv" target="_blank">
+                12835 E. Arapahoe Road<br/>
+                Tower 1, Suite 320<br/>
+                Centennial, CO 80112
+              </a>
+            </p>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </section>
+
+
+  <script>
+    const formEl = document.querySelector('#contact-form');
+    const postUrl = 'https://app.99inbound.com/api/e/xpF-V77V';
+
+    formEl.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      fetch(postUrl, {
+        method: 'POST',
+        body: new FormData(formEl),
+      })
+        // .then(res => res.json())
+        .then(response => console.log('Success:', response))
+        .catch(error => console.error('Error:', error));
+
+    });
+  </script>
+
 </main>
