@@ -33,6 +33,11 @@ plugins:
 sass:
   style: compressed
   sass_dir: assets/css
+exclude:
+  - docs
+  - README.md
+  - Gemfile
+  - Gemfile.lock
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

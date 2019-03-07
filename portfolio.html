@@ -1,18 +1,90 @@
 ---
-layout: default
+layout: page-brown
 title: Portfolio
 permalink: /portfolio/
 ---
 
+<div class="slider">
+  <button type="button" class="slider-btn prev-btn"></button>
+  <div class="slider-track">
 
-<main class="main-portfolio">
-  <section class="section-portfolio section-brown">
-    <div class="wrapper portfolio-wrapper">
+  {% for photo in site.data.portfolio %}
+    <img src="{{photo.src | relative_url}}" alt="Malibu Homes house photo" class="portfolio-img">
+  {% endfor %}
 
-      {% for photo in site.data.portfolio %}
-        <img src="{{photo.src | relative_url}}" alt="Malibu Homes house photo" class="portfolio-img">
-      {% endfor %}
+  </div>
+  <button type="button" class="slider-btn next-btn"></button>
+</div>
 
-    </div>
-  </section>
-</main>
+
+
+<script>
+
+(() => {
+
+  let sliderWindowEl;
+  let sliderTrackEl;
+  let sliderImageCount;
+  let nextBtn;
+  let prevBtn;
+
+  let imagePositions = [];
+  let currentImage = 0;
+
+
+  function setTrackPosition() {
+    const imagePos = imagePositions[currentImage];
+    const newLeft = -(imagePos.left + imagePos.width/2) + (sliderWindowEl.offsetWidth/2);
+
+    sliderTrackEl.style.transform = `translateX(${newLeft}px)`;
+    nextBtn.classList.toggle('hide', (currentImage === sliderImageCount-1));
+    prevBtn.classList.toggle('hide', (currentImage === 0));
+  }
+
+  function bindEvents() {
+    nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', prevImage);
+  }
+
+  function nextImage() {
+    if (currentImage < sliderImageCount-1) {
+      currentImage++;
+      setTrackPosition();
+    }
+  }
+
+  function prevImage() {
+    if (currentImage !== 0) {
+      currentImage--;
+      setTrackPosition();
+    }
+  }
+
+  function initSlider() {
+    sliderWindowEl = document.querySelector('.slider');
+    sliderTrackEl = sliderWindowEl.querySelector('.slider-track');
+    nextBtn = sliderWindowEl.querySelector('.next-btn');
+    prevBtn = sliderWindowEl.querySelector('.prev-btn');
+    sliderImageCount = sliderTrackEl.children.length;
+
+    for (let i = 0; i < sliderTrackEl.children.length; i++) {
+
+      const el = sliderTrackEl.children[i];
+      imagePositions.push({
+        left: el.offsetLeft,
+        width: el.offsetWidth
+      });
+
+    }
+
+    setTrackPosition();
+    bindEvents();
+  }
+
+
+  window.onload = initSlider;
+
+})();
+
+
+</script>
