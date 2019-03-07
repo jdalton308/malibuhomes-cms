@@ -4,11 +4,15 @@
 
 .footer {
   display: block;
-  background-color: $grey-darkest;
-  color: $white;
+  background-color: $white;
+  // color: $white;
 
   .footer-main-content {
     padding: 64px 24px;
+
+    .wrapper {
+      justify-content: space-between;
+    }
   }
   .wrapper {
     display: flex;
@@ -16,13 +20,45 @@
 
   .footer-column {
     flex: 1 0 0;
-    max-width: 25%;
     display: inline-block;
     vertical-align: top;
-    margin-right: 24px;
 
     &:last-child {
       margin: 0;
+    }
+
+    &.logo-column {
+      text-align: center;
+    }
+  }
+
+  .footer-logo {
+    display: block;
+    height: 120px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .social-column {
+    text-align: right;
+  }
+  .social-icon {
+    border: 0;
+    padding: 0;
+    margin-left: 24px;
+
+    svg {
+      display: inline-block;
+      height: 36px;
+      width: auto;
+      fill: $grey-darker;
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      svg {
+        fill: $blue-light;
+      }
     }
   }
 
