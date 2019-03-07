@@ -89,6 +89,22 @@ button {
     background-color 0.4s,
     color 0.3s;
 
+  &.btn-primary {
+    color: $white;
+    background-color: $blue-light;
+    text-transform: uppercase;
+    border: 2px solid $blue-light;
+
+    &:hover {
+      color: $blue-light;
+      background-color: $white;
+    }
+    &:active {
+      color: $white;
+      transition: none;
+    }
+  }
+
   &.btn-outline {
     color: $blue-light;
     text-transform: uppercase;
@@ -134,6 +150,9 @@ h2 {
   margin-bottom: 24px;
 }
 
+h3 {
+  font-size: 24px;
+}
 h4 {
   margin: 0 0 4px;
   font-size: 14px;

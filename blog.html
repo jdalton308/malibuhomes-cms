@@ -1,0 +1,21 @@
+---
+layout: page-brown
+title: Blog
+permalink: /blog/
+---
+
+<h1>Our Blog</h1>
+<div class="post-list">
+
+{% if site.posts.size > 0 %}
+  {% for post in site.posts %}
+    <a class="post-item" href="{{ post.url }}">
+      <h4>{{ post.title }}</h4>
+      <p>{{ post.date | date: "%B %d, %Y" }}</p>
+    </a>
+  {% endfor %}
+{% else %}
+  <h4>No blog posts yet. Check back soon.</h4>
+{% endif %}
+
+</div>

@@ -18,12 +18,39 @@
   // Sections
 
   .section-hero {
+    height: 90vh;
     padding: 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    img {
-      display: block;
+    .hero-wrapper {
+      position: relative;
+      height: 100%;
+    }
+    .hero-copy-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
       width: 100%;
-      height: auto;
+      height: 100%;
+      max-width: 400px;
+      padding: 32px 24px;
+      background-color: rgba(0,0,0, 0.5);
+      color: #fff;
+
+      h1 {
+        margin-bottom: 8px;
+      }
+      h4 {
+        margin-bottom: 32px;
+      }
+
+      .copy-box-center {
+        flex: 0 0 100%;
+      }
     }
   }
   .section-cta {
