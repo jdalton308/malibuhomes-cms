@@ -7,3 +7,5 @@ fields:
   label: title
   config:
     required: true
+pages:
+- _posts/test-post.md
