@@ -9,6 +9,8 @@ hero-subtitle: Colorado’s Custom Home Builder
 about-us-section-title: Building a home has never been so fun.
 
 accolades-section-title: Colorado’s Custom Home Builder
+accolades-section-subtitle: >
+  Malibu Homes is an award winning builder with many homebuilding accolades including<br><strong>Two Time GOLD Recipient for BEST HOME IN THE NATION!</strong>
 accolades-image: /assets/images/malibu-home6.jpg
 
 community-section-title: Supporting the Denver Community
@@ -53,7 +55,7 @@ get-started-section-title: Get Started Today
   <section class="section-accolades section-grey">
     <div class="wrapper">
       <h2>{{ page.accolades-section-title }}</h2>
-      <p class="subtitle">Malibu Homes is an award winning builder with many homebuilding accolades including<br><strong>Two Time GOLD Recipient for BEST HOME IN THE NATION!</strong></p>
+      <p class="subtitle">{{ page.accolades-section-subtitle }}</p>
 
       <img src="{{ page.accolades-image | relative_url}}" alt="Photo of finished, award-winning, Malibu Homes house" class="img-section-full">
     </div>
@@ -70,37 +72,11 @@ get-started-section-title: Get Started Today
           
           {% for bullet in page.community-bullets %}
           <div class="check-item">
-            <div class="check-mark">O</div>
-            <div class="item-content">
-              <h4>{{ bullet.title }}</h4>
-              <p>{{ bullet.content }}</p>
-            </div>
+            <h4>{{ bullet.title }}</h4>
+            <p>{{ bullet.content }}</p>
           </div>
           {% endfor %}
-<!-- 
-          <div class="check-item">
-            <div class="check-mark">O</div>
-            <div class="item-content">
-              <h4>Mission</h4>
-              <p>Seeking to put God’s love into action, Habitat for Humanity brings people together to build homes, communities and hope.</p>
-            </div>
-          </div>
 
-          <div class="check-item">
-            <div class="check-mark">O</div>
-            <div class="item-content">
-              <h4>Vision</h4>
-              <p>A world where everyone has a decent place to live.</p>
-            </div>
-          </div>
-
-          <div class="check-item">
-            <div class="check-mark">O</div>
-            <div class="item-content">
-              <h4>History</h4>
-              <p>Habitat for Humanity was established in 1976 by Millard and Linda Fuller. The Fullers wanted to address poverty housing on a global scale through “partnership housing”.</p>
-            </div>
-          </div> -->
         </div>
 
         <div class="flex-item">

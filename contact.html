@@ -4,6 +4,9 @@ title: Contact
 permalink: /contact/
 ---
 
+{% assign contact = site.data.contact %}
+{% assign address = contact.address %}
+
 
 <main class="main-contact">
   <section class="section-contact section-grey">
@@ -57,21 +60,21 @@ permalink: /contact/
         <div class="contact-items">
           <div class="contact-item">
             <h4>Email</h4>
-            <p><a href="mailto:team@malibuhomescolorado.com" target="_blank">team@malibuhomescolorado.com</a></p>
+            <p><a href="mailto:{{ contact.email.address }}" target="_blank">{{ contact.email.address }}</a></p>
           </div>
           
           <div class="contact-item">
             <h4>Phone</h4>
-            <p><a href="tel:3037900909">303.790.0909</a></p>
+            <p><a href="{{ contact.phone.link }}">{{ contact.phone.number }}</a></p>
           </div>
 
           <div class="contact-item">
             <h4>Address</h4>
             <p>
-              <a href="https://goo.gl/maps/XaEnWbPHhJv" target="_blank">
-                12835 E. Arapahoe Road<br/>
-                Tower 1, Suite 320<br/>
-                Centennial, CO 80112
+              <a href="{{ address.google-maps }}" target="_blank">
+                {{ address.street1 }}<br/>
+                {{ address.street2 }}<br/>
+                {{ address.city }}
               </a>
             </p>
           </div>
