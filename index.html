@@ -8,6 +8,22 @@ hero-subtitle: Colorado’s Custom Home Builder
 
 about-us-section-title: Building a home has never been so fun.
 
+accolades-section-title: Colorado’s Custom Home Builder
+accolades-image: /assets/images/malibu-home6.jpg
+
+community-section-title: Supporting the Denver Community
+community-section-subtitle: We support the Denver Habitat for Humanity
+community-bullets:
+  - title: Mission
+    content: Seeking to put God’s love into action, Habitat for Humanity brings people together to build homes, communities and hope.
+  - title: Vision
+    content: A world where everyone has a decent place to live.
+  - title: History
+    content: Habitat for Humanity was established in 1976 by Millard and Linda Fuller. The Fullers wanted to address poverty housing on a global scale through “partnership housing”.
+community-image-1: /assets/images/habitat-600.jpg
+community-image-2: /assets/images/habitat-volunteers.jpg
+
+get-started-section-title: Get Started Today
 ---
 
 
@@ -36,21 +52,32 @@ about-us-section-title: Building a home has never been so fun.
 
   <section class="section-accolades section-grey">
     <div class="wrapper">
-      <h2>Colorado’s Custom Home Builder</h2>
+      <h2>{{ page.accolades-section-title }}</h2>
       <p class="subtitle">Malibu Homes is an award winning builder with many homebuilding accolades including<br><strong>Two Time GOLD Recipient for BEST HOME IN THE NATION!</strong></p>
 
-      <img src="{{'/assets/images/malibu-home6.jpg' | relative_url}}" alt="Photo of finished, award-winning, Malibu Homes house" class="img-section-full">
+      <img src="{{ page.accolades-image | relative_url}}" alt="Photo of finished, award-winning, Malibu Homes house" class="img-section-full">
     </div>
   </section>
 
   <section class="section-community section-dark">
     <div class="wrapper">
-      <h2>Supporting the Denver Community</h2>
-      <p class="subtitle">We support the Denver Habitat for Humanity.</p>
+      <h2>{{ page.community-section-title }}</h2>
+      <p class="subtitle">{{ page.community-section-subtitle }}</p>
 
       <div class="flex-row">
 
         <div class="flex-item">
+          
+          {% for bullet in page.community-bullets %}
+          <div class="check-item">
+            <div class="check-mark">O</div>
+            <div class="item-content">
+              <h4>{{ bullet.title }}</h4>
+              <p>{{ bullet.content }}</p>
+            </div>
+          </div>
+          {% endfor %}
+<!-- 
           <div class="check-item">
             <div class="check-mark">O</div>
             <div class="item-content">
@@ -73,15 +100,15 @@ about-us-section-title: Building a home has never been so fun.
               <h4>History</h4>
               <p>Habitat for Humanity was established in 1976 by Millard and Linda Fuller. The Fullers wanted to address poverty housing on a global scale through “partnership housing”.</p>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="flex-item">
-          <img src="{{'/assets/images/habitat-600.jpg' | relative_url}}" alt="" class="img-section-full">
+          <img src="{{ page.community-image-1 | relative_url}}" alt="" class="img-section-full">
         </div>
 
         <div class="flex-item">
-          <img src="{{'/assets/images/habitat-volunteers.jpg' | relative_url}}" alt="" class="img-section-full">
+          <img src="{{ page.community-image-2 | relative_url}}" alt="" class="img-section-full">
         </div>
 
       </div>
@@ -90,7 +117,7 @@ about-us-section-title: Building a home has never been so fun.
 
   <section class="section-cta section-brown">
     <div class="wrapper">
-      <h2>Get Started Today</h2>
+      <h2>{{ page.get-started-section-title }}</h2>
       <a href="/contact/" class="btn-outline btn">Contact Us</a>
     </div>
   </section>
