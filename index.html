@@ -1,19 +1,26 @@
 ---
 title: Home
 layout: default
+
+hero-image: /assets/images/malibu-home15.jpg
+hero-title: Malibu Homes Colorado
+hero-subtitle: Colorado’s Custom Home Builder
+
+about-us-section-title: Building a home has never been so fun.
+
 ---
 
 
 <main class="main-home">
   <section
     class="section-hero"
-    style="background-image: url({{'/assets/images/malibu-home15.jpg' | relative_url}});"
+    style="background-image: url({{page.hero-image | relative_url}});"
   >
     <div class="wrapper hero-wrapper">
       <div class="hero-copy-box">
         <div class="copy-box-center">
-          <h1>Malibu Homes Colorado</h1>
-          <h4>Denver's Premier Luxury Home Builder</h4>
+          <h1>{{ page.hero-title }}</h1>
+          <h4>{{ page.hero-subtitle }}</h4>
           <a href="/about/" class="btn btn-primary">Learn More</a>
         </div>
       </div>
@@ -22,7 +29,7 @@ layout: default
 
   <section class="section-cta section-brown">
     <div class="wrapper">
-      <h2>Building a home has never been so fun.</h2>
+      <h2>{{ page.about-us-section-title }}</h2>
       <a href="/about/" class="btn-outline btn">About Us</a>
     </div>
   </section>
