@@ -31,4 +31,15 @@ $brown-light: #e3e0cf;
 //------
 
 $wrapper-full: 980px;
-$mobile-break: 980px;
+$mobile-break: 480px;
+
+
+
+// MIXINS
+//-------
+
+@mixin overMobile() {
+  @media (min-width: $mobile-break) {
+    @content;
+  }
+}

@@ -3,8 +3,12 @@
   <a href="/" class="logo-link">
     <img src="/assets/images/mh-logo.jpg" alt="Malibu Homes logo" class="header-logo">
   </a>
-  <nav class="wrapper">
 
+  <button class="nav-mobile-open">
+    <span class="icon-hamburger"></span>
+  </button>
+
+  <nav class="wrapper nav-link-list">
     {% for item in site.data.header %}
       <a
         href="{{ item.to }}"
@@ -13,6 +17,23 @@
         {{ item.name }}
       </a>
     {% endfor %}
-
   </nav>
+
 </header>
+
+<script>
+
+function initMobileHeader() {
+  const openBtnEl = document.querySelector('.nav-mobile-open');
+  const overflowMenuEl = document.querySelector('.nav-link-list');
+
+  openBtnEl.addEventListener('click', () => {
+    overflowMenuEl.classList.toggle('open');
+  });
+}
+
+if (window.innerWidth < 480) {
+  initMobileHeader();
+}
+
+</script>

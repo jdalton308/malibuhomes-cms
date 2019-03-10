@@ -8,44 +8,127 @@
   top: 0;
   left: 0;
   width: 100%;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px 12px 12px;
   background-color: $white;
   box-shadow: 0 0 8px $grey;
 
-  .logo-link {
+  @include overMobile() {
     display: block;
-    margin: 0 auto 4px;
-    text-align: center;
-    border: 0;
   }
-  .header-logo {
+
+  .logo-link {
+    flex: 0 0 auto;
     display: inline-block;
-    height: 62px;
-    width: auto;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
+    border: 0;
 
-    .nav-link {
-      flex: 0 0 auto;
+    @include overMobile() {
+      display: block;
+      margin: 0 auto 4px;
+      text-align: center;
+    }
+
+    .header-logo {
       display: inline-block;
-      padding: 6px  4px;
-      margin-right: 18px;
-      border: 0;
-      transition: color 0.2s;
-
-      &:last-child {
-        margin-right: 0;
-      }
-      &:hover {
-        color: $grey-light;
-      }
-
-      &.active {
-        border-bottom: 1px solid $grey-light;
-      }
+      height: 62px;
+      width: auto;
     }
   }
+
+  .nav-mobile-open {
+    flex: 0 0 auto;
+    display: inline-block;
+    padding: 16px 12px;
+
+    .icon-hamburger {
+      position: relative;
+      display: block;
+      height: 2px;
+      width: 32px;
+      background-color: $grey-dark;
+
+      &:before,
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $grey-dark;
+      }
+      &:before {
+        transform: translateY(-10px);
+      }
+      &:after {
+        transform: translateY(10px);
+      }
+    }
+
+    @include overMobile() {
+      display: none;
+    }
+  }
+
+  nav.nav-link-list {
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: $white;
+    box-shadow: 0 0 8px $grey;
+    transform: translateY(-100vh);
+    transition: transform 0.4s ease-out;
+
+    &.open {
+      transform: translateY(0);
+    }
+
+    @include overMobile() {
+      position: static;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: 16px 24px;
+    margin-bottom: 18px;
+    border: 0;
+    transition: color 0.2s;
+
+    &:last-child {
+      margin: 0;
+    }
+    &:hover {
+      color: $grey-light;
+    }
+
+    &.active {
+      border-bottom: 1px solid $grey-light;
+    }
+
+    @include overMobile() {
+      display: inline-block;
+      padding: 6px 4px;
+      margin-right: 18px;
+      margin-bottom: 0;
+    }
+  }
+
 }
