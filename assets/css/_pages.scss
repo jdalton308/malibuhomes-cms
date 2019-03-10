@@ -123,12 +123,22 @@
 .main-contact {
   .contact-row {
     display: flex;
+    flex-direction: column;
+
+    @include overMobile() {
+      flex-direction: row;
+    }
 
     form {
       position: relative;
       flex: 3 0 0;
-      margin-right: 36px;
+      margin-bottom: 36px;
       text-align: left;
+
+      @include overMobile() {
+        margin-right: 36px;
+        margin-bottom: 0;
+      }
 
       .status-overlay {
         position: absolute;

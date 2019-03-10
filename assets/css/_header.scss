@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px 12px;
+  padding: 8px 24px;
   background-color: $white;
   box-shadow: 0 0 8px $grey;
 
@@ -81,7 +81,7 @@
     width: 100%;
     height: auto;
     margin: 0;
-    padding: 0;
+    padding: 0 0 24px;
     background-color: $white;
     box-shadow: 0 0 8px $grey;
     transform: translateY(-100vh);
@@ -120,7 +120,8 @@
     }
 
     &.active {
-      border-bottom: 1px solid $grey-light;
+      font-weight: 700;
+      background-color: #efefef;
     }
 
     @include overMobile() {
@@ -128,6 +129,12 @@
       padding: 6px 4px;
       margin-right: 18px;
       margin-bottom: 0;
+
+      &.active {
+        border-bottom: 1px solid $grey-light;
+        font-weight: 400;
+        background-color: transparent;
+      }
     }
   }
 
