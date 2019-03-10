@@ -16,13 +16,26 @@
 // Portfolio
 //---------
 
+.section-portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .portfolio-wrapper {
+    flex: 0 0 auto;
+  }
+}
 .slider {
   position: relative;
   width: 100%;
   max-width: 800px;
-  height: 400px;
+  height: 280px;
   margin: 0 auto;
   overflow: hidden;
+
+  @include overMobile() {
+    height: 400px;
+  }
 
   .slider-track {
     position: relative;

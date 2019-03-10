@@ -29,7 +29,7 @@
     flex: 1 0 0;
     display: inline-block;
     vertical-align: top;
-    margin-right: 24px;
+    margin-bottom: 24px;
 
     &:last-child {
       margin: 0;
@@ -37,6 +37,11 @@
 
     &.logo-column {
       text-align: center;
+    }
+
+    @include overMobile() {
+      margin-right: 24px;
+      margin-bottom: 0;
     }
   }
 
