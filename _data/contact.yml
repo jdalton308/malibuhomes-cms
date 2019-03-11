@@ -1,3 +1,4 @@
+---
 address:
   street1: 12835 E. Arapahoe Road
   street2: Tower 1, Suite 320
@@ -6,9 +7,9 @@ address:
 hours: 'Monday-Friday: 9-5'
 phone:
   link: tel:3037900909
-  number: '303.790.0909'
+  number: 303.790.0909
 email:
-  address: team@malibuhomescolorado.com
+  address: malibuhomescolorado@gmail.com
 facebook: https://www.facebook.com/malibuhomesco/
 twitter: https://twitter.com/malibuhomesco
-copyright: '&copy; 2019, Malibu Homes Colorado'
+copyright: "&copy; 2019, Malibu Homes Colorado"
