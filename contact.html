@@ -16,44 +16,7 @@ permalink: /contact/
       <div class="contact-row">
 
         <form id="contact-form">
-
-          <div class="form-row">
-            <label class="form-group">
-              <span class="label">Email</span>
-              <input type="email" name="email">
-            </label>
-            <label class="form-group">
-              <span class="label">Name</span>
-              <input type="text" name="name">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <div style="position: absolute; left: -5000px;">
-              <input type="checkbox" name="awesome_golden_matte_bullfrog" value="1" tabindex="-1" autocomplete="no">
-            </div>
-            <label class="form-group">
-              <span class="label">Message</span>
-              <textarea name="message" cols="30" rows="10"></textarea>
-            </label>
-          </div>
-
-          <div class="form-row button-row">
-            <button class="btn btn-outline btn-light">Submit</button>
-          </div>
-
-          <div class="status-overlay">
-            <div class="status status-submitting">
-              Submitting...
-            </div>
-            <div class="status status-success">
-              Thank you for your message. We will get back to you as soon as possible.
-            </div>
-            <div class="status status-error">
-              Could not submit message. Please try again.
-            </div>
-          </div>
-
+          <iframe src="https://buildertrend.net/leads/contactforms/ContactFormFrame.aspx?builderID=42354" scrolling="no" id="btIframe" style="background:transparent;border:0px;margin:0 auto;width:100%;"></iframe>
         </form>
 
 
@@ -82,34 +45,11 @@ permalink: /contact/
 
       </div>
 
+
     </div>
   </section>
 
 
-  <script>
-    const formEl = document.querySelector('#contact-form');
-    const statusOverlayEl = document.querySelector('.status-overlay');
-    const postUrl = 'https://app.99inbound.com/api/e/pyU-KirE';
-
-
-    formEl.addEventListener('submit', (e) => {
-      e.preventDefault();
-      statusOverlayEl.classList.add('submitting', 'show');
-
-      fetch(postUrl, {
-        method: 'POST',
-        body: new FormData(formEl),
-      })
-        .then((response) => {
-          console.log('Success:', response);
-          statusOverlayEl.classList.replace('submitting', 'success');
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-          statusOverlayEl.classList.replace('submitting', 'error');
-        });
-
-    });
-  </script>
+  <script type="text/javascript" src="https://buildertrend.net/leads/contactforms/js/btClientContactForm.js" async defer></script>
 
 </main>
