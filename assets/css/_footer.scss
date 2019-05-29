@@ -36,10 +36,6 @@
       margin: 0;
     }
 
-    &.logo-column {
-      text-align: center;
-    }
-
     @include overMobile() {
       margin-right: 24px;
       margin-bottom: 0;
@@ -75,6 +71,13 @@
         fill: $blue-light;
       }
     }
+  }
+
+  .bt-login-iframe {
+    height: 180px;
+    width: 100%;
+    margin-bottom: 12px;
+    border: 0px;
   }
 
   .footer-copyright {
